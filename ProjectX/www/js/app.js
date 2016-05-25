@@ -64,6 +64,20 @@ angular.module('starter', ['ionic'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+  .state('group.add', {
+        url: '/group-detail',
+        views: {
+          'group-add': {
+            templateUrl: 'templates/group-add.html',
+            //controller: 'PointsCtrl'
+          }
+        }
+  })
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
  $stateProvider.state('groups', {
    url: '/groups',
    templateUrl: 'templates/groups.html',
