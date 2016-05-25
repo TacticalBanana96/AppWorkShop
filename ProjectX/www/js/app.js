@@ -71,6 +71,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
 
  .state('group', {
    url: '/group/:group_id',
+   //abstract: true,
    templateUrl: 'templates/group.html',
    controller: 'Group'
  })
@@ -82,6 +83,15 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
  })
  
  //Daria's States
+ .state('group.chats', {
+      url: '/chats',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/tabs-chats.html',
+          controller: 'ChatsCtrl'
+        }
+      }
+  })
 
 
  //Ryvon's States
