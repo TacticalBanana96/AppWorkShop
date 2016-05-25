@@ -41,7 +41,7 @@ angular.module("ionic").provider("$ionicMaterialConfig", function() {
 
 //*** DO NOT TROUBLE ABOVE CODE!! ***
 
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic','starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -65,23 +65,19 @@ angular.module('starter', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  $stateProvider
-  .state('group.add', {
-        url: '/group-detail',
-        views: {
-          'group-add': {
-            templateUrl: 'templates/group-add.html',
-            //controller: 'PointsCtrl'
-          }
-        }
-  })
-})
 
-.config(function($stateProvider, $urlRouterProvider) {
- $stateProvider.state('groups', {
+ $stateProvider
+
+ .state('groups', {
    url: '/groups',
    templateUrl: 'templates/groups.html',
-   //controller: 'home'
+   controller: 'Groups'
+ })
+
+ .state('groupadd', {
+   url: '/group_add/',
+   templateUrl: 'templates/group-add.html',
+   controller: 'GroupAdd'
  });
 
  $urlRouterProvider.otherwise('/groups');
