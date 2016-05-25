@@ -38,10 +38,11 @@ angular.module("ionic").provider("$ionicMaterialConfig", function() {
   }
 }]);
 
+//********************************************
+//******** DO NOT TROUBLE ABOVE CODE!! *******
+//********************************************
 
-//*** DO NOT TROUBLE ABOVE CODE!! ***
-
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic','starter.controllers','starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -64,11 +65,38 @@ angular.module('starter', ['ionic'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
- $stateProvider.state('groups', {
+
+
+ $stateProvider
+
+ .state('group', {
+   url: '/group/:group_id',
+   templateUrl: 'templates/group.html',
+   controller: 'Group'
+ })
+
+ .state('groups', {
    url: '/groups',
    templateUrl: 'templates/groups.html',
-   //controller: 'home'
+   controller: 'Groups'
+ })
+ 
+ //Daria's States
+
+
+ //Ryvon's States
+
+ 
+ //Renaco's States 
+
+
+
+ .state('groupadd', {
+   url: '/group_add/',
+   templateUrl: 'templates/group-add.html',
+   controller: 'GroupAdd'
  });
+
 
  $urlRouterProvider.otherwise('/groups');
 });
