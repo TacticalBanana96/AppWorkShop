@@ -8,12 +8,14 @@
         	     </div>
         	   </div> -->
 
-            <div ng-click="gotoURL('/group/{{g.$id}}')" class="list card" ng-repeat="g in groups">
+            <div ng-click="gotoURL('group', {{g.$id}})" class="list card" ng-repeat="g in groups">
                 <a src="">
                   <div class="item item-image">
                     <img src={{g.img_url}}> 
-                    <h5>{{g.name}}</h5>
-                    <p>{{g.desc}}</p>
+                    <div class="tile-data">
+                      <h6>{{g.name}}</h6>
+                      <p>{{g.desc}}</p>
+                    </div>
                   </div>
                 </a>
              </div>

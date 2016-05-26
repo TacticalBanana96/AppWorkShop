@@ -1,6 +1,9 @@
 <ion-view view-title="Chats">
+  <ion-nav-buttons side="left">
+      <button class="button" ng-click="$myBack($event)"><i class="icon ion-arrow-left-c"></i></button>
+  </ion-nav-buttons>
   <ion-content >
-    <div class="list messages" ng-repeat="chat in chats | filter:group_id">
+    <div class="list messages" ng-repeat="chat in chats">
       <a class="item item-avatar messages" href="https://www.facebook.com/{{chat.user}}">
         <img ng-src="{{chat.imgURL}}">
           <h3>{{chat.user_id}}</h3>

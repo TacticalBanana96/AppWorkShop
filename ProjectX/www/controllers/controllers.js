@@ -1,15 +1,29 @@
  //Daria's controllers
 angular.module('starter.controllers', ["ionic",'firebase'])
 
-.controller('ChatsCtrl', ['$scope', '$firebaseArray', '$rootScope',
-      function($scope, $firebaseArray, $rootScope) {
-
+.controller('ChatsCtrl', ['$scope', '$stateParams', '$firebaseArray', '$rootScope', '$ionicHistory', '$state',
+      function($scope, $stateParams, $firebaseArray, $rootScope, $ionicHistory, $state) {
+                $rootScope.notifyIonicGoingBack = function() {
+                   $state.go('groups');
+                }
+                $scope.$myBack = function() {
+                    $ionicHistory.goBack();
+                    $rootScope.notifyIonicGoingBack();
+                  };
+                console.log('state ' + $stateParams);
                 var ref = new Firebase('https://projectxu.firebaseio.com/chats') //USE OUR Firebase FOR CHAT!!
                 $scope.sender_id = 1;
-                $scope.group_id = 1;
+                $scope.group_id = $stateParams.group_id;
                 var sync = $firebaseArray(ref);
                 sync.$loaded(function (data) {
-                    $scope.chats = data;
+                    var filtered_chats = new Array();
+                    angular.forEach(data, function(value, key) {
+                      if(value.group_id == $scope.group_id) {
+                        filtered_chats.push(value);
+
+                      }
+                    });
+                    $scope.chats = filtered_chats;
                 });
 
 
@@ -41,7 +55,7 @@ angular.module('starter.controllers', ["ionic",'firebase'])
 
 
  //Ryvon's controllers
-.controller('DashCtrl', function($scope, $firebaseAuth, $firebaseArray, $filter,FBdata) {
+.controller('DashCtrl', function($scope, $state, $firebaseAuth, $firebaseArray, $filter,FBdata) {
 console.log('aaaaa');
 $scope.fbdata = FBdata.all();
 console.log($scope.fbdata);
@@ -54,16 +68,16 @@ $scope.login = function(){
         } else {
           console.log("Authenticated successfully with payload:", authData);
           $state.go("groups"); 
-          var users = $filter('filter')($scope.fbdata, {details : authData.facebook});
+          var users = $filter('filter')($scope.fbdata, authData.facebook);
           console.log(users);
 
 
           if(users.length >= 1){
             angular.forEach(users,function(user, key) {
-              user.details = authData.facebook;
+              user = authData.facebook;
             })
           }
-            $scope.fbdata.$add({details : authData.facebook});
+            $scope.fbdata.$add(authData.facebook);
       }
 
     },{scope:"public_profile,email"});
@@ -83,14 +97,26 @@ $scope.login = function(){
 })
  
  //Renaco's controllers
+ .controller('TasksCtrl', function($scope, $stateParams, $rootScope, $state, $ionicHistory) {
+  $rootScope.notifyIonicGoingBack = function() {
+     $state.go('groups');
+  }
+  $scope.$myBack = function() {
+      $ionicHistory.goBack();
+      $rootScope.notifyIonicGoingBack();
+    };
+  $scope.randomVAr = $stateParams.group_id;
+  console.log("task");
 
+})
 
  //Kadeem's controllers
-.controller('Group', function($scope, $stateParams) {
+.controller('Group', function($scope, $stateParams, Groups) {
 
-	$scope.groupData = "Software Engineering";
-	$scope.randomVAr = $stateParams.group_id;
-	console.log($scope.randomVAr);
+  $scope.group_id = $stateParams.group_id;
+  
+  console.log('Full group ' + Groups.get($scope.group_id));
+	console.log('Group ' + $scope.randomVAr);
 
 })
 
@@ -102,12 +128,12 @@ $scope.login = function(){
 })
 
 //Controller for groups 
-.controller('Groups', function($scope,$location,Groups) {
+.controller('Groups', function($scope, $state, Groups) {
 
 	$scope.groups = Groups.all();
-	console.log($scope.groups);
 
-	$scope.gotoURL = function(path){
-		$location.path(path);
+	$scope.gotoURL = function(state, group_id){
+
+    $state.go(state, {'group_id': group_id});
 	};
 });
