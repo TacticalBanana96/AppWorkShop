@@ -3,6 +3,7 @@
 .input{
 	background-color: white;
 	height: 40px;
+	display:inline-block;
 }
 
 .messages{
@@ -12,18 +13,14 @@
 	background-color:#F0F0F0;
 }
 .img{
-	height: 64;
-	width:64;
-}
-.platform-android .chatbox{
-	position: fixed;
-	background-color: white;
+	height: 64px;
+	width:64px;
 }
 
-.platform-ios .chatbox{
-	position: fixed;
-	margin-bottom: 20%;
+.platform-ios .bar-footer{
+	bottom: 71px;
 }
+
 
 .add-background {
 	background: url('../img/login_img.png') no-repeat center;

@@ -1,26 +1,31 @@
 <ion-view view-title="Chats">
   <ion-nav-buttons side="left">
-      <button class="button" ng-click="$myBack($event)"><i class="icon ion-arrow-left-c"></i></button>
+    <button class="button" ng-click="$myBack($event)"><i class="icon ion-arrow-left-c"></i></button>
   </ion-nav-buttons>
   <ion-content >
-    <div class="list messages" ng-repeat="chat in chats">
-      <a class="item item-avatar messages" href="https://www.facebook.com/{{chat.user}}">
-        <img ng-src="{{chat.imgURL}}">
-          <h3>{{chat.user_id}}</h3>
-          <p>{{chat.message}}</p>
-      </a>
+    <div  style=" padding-bottom:100px;">
+      <div class="list messages" ng-repeat="chat in chats | filter:group_id">
+       <a class="item item-avatar messages" href="https://www.facebook.com/{{chat.user}}">
+         <img ng-src="{{chat.imgURL}}">
+           <h3>{{chat.sender_id}}</h3>
+           <p>{{chat.message}}</p>
+       </a>
+      </div>
     </div>
-    <ion-footer-bar  align-title="left" class="bar-assertive chatbox" >
-      <form >
-        <div class="list">
+  </ion-content>
+   <div class="bar bar-footer bar-balanced">
+    <div class="title">
+     <form>
+       <div class="list ">
           <div class="item item-input-inset">
-            <label class="item-input-wrapper input" >
+            <label class="item-input-wrapper input">
               <input type="text" placeholder="message" ng-model="chat.message" >
             </label>
-            <button class="button button-positive ion ion-ios-chatbubble" ng-click = "sendChat(chat)" class="chatbox"></button>
+            <button class="button ion ion-chatbubble custom-icon" ng-click = "sendChat(chat)" style="padding-bottom: 60px;font-size: 30px;color: yellow;"></button>
           </div>
         </div>
       </form>
-    </ion-footer-bar>
-  </ion-content>
+    </div>
+  </div>
 </ion-view>
+
