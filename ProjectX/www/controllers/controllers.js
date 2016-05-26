@@ -8,7 +8,7 @@ angular.module('starter.controllers', ["ionic",'firebase'])
       function($scope, $firebaseArray, $rootScope) {
 
                 var ref = new Firebase('https://projectxu.firebaseio.com/chats') //USE OUR Firebase FOR CHAT!!
-                $scope.user_id = 1;
+                $scope.sender_id = 1;
                 $scope.group_id = 1;
                 var sync = $firebaseArray(ref);
                 sync.$loaded(function (data) {
@@ -29,7 +29,7 @@ angular.module('starter.controllers', ["ionic",'firebase'])
                   */
 
                   $scope.chats.$add({
-                      user_id: $scope.user_id, //SWITCH TO FACEBOOK!!!
+                      user_id: $scope.sender_id, //SWITCH TO FACEBOOK!!!
                       message: chat.message, 
                       group_id: $scope.group_id, 
                       timestamp: new Date().getTime()
