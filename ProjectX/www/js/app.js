@@ -71,7 +71,8 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
 
  .state('group', {
    url: '/group/:group_id',
-   abstract: true,
+   
+   //abstract: true,
 
    templateUrl: 'templates/group.html',
    controller: 'Group'
@@ -93,6 +94,24 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
         }
       }
   })
+  
+  // //Renaco's States 
+  // .state('page', {
+  //   url: '/page3',
+  //   templateUrl: 'templates/tabs-task.html',
+  //   //controller: 'pageCtrl'
+  // })
+
+    //test state for tabs
+   .state('group.tasks', {
+      url: '/task',
+      views: {
+        'tab-task': {
+          templateUrl: 'templates/tabs-task.html',
+          controller: 'TasksCtrl'
+        }
+      }
+  })
 
 
  //Ryvon's States
@@ -102,8 +121,8 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
     controller: 'DashCtrl'
   })
 
- //Renaco's States 
-
+ 
+ //Kadeem's States
  .state('groupadd', {
    url: '/group_add/',
    templateUrl: 'templates/group-add.html',
