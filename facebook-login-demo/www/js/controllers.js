@@ -6,7 +6,7 @@ $scope.fbdata = FBdata.all();
 console.log($scope.fbdata);
 
 $scope.login = function(){
-  var ref = new Firebase("https://boiling-torch-8435.firebaseio.com/users");
+  var ref = new Firebase("https://sizzling-torch-8150.firebaseio.com/users");
         ref.authWithOAuthPopup("facebook", function(error, authData) {
       if (error){
           console.log("Login Failed!", error);

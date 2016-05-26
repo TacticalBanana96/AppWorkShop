@@ -85,8 +85,16 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
 
 
  //Ryvon's States
+.state('group.dash', {
+    url: '/dash',
+    //views: {
+    //  'tab-dash': {
+        templateUrl: 'templates/group-dash.html',
+        controller: 'DashCtrl'
+      //}
+    //}
+  })
 
- 
  //Renaco's States 
 
 

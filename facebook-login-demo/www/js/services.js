@@ -1,7 +1,7 @@
 angular.module('starter.services', ['ionic','firebase'])
 
 .factory('FBdata',function($firebaseArray){
-  var ref = new Firebase("https://boiling-torch-8435.firebaseio.com/users");
+  var ref = new Firebase("https://sizzling-torch-8150.firebaseio.com/");
   var allUsers = $firebaseArray(ref);
 
   return {
