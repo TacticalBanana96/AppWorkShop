@@ -1,14 +1,19 @@
-angular.module('starter.services', ["ionic", "firebase"])
+angular.module('starter.services', ['ionic','firebase'])
 
 
  //Daria's services
 
+//Ryvon's services
+.factory('FBdata',function($firebaseArray){
+  var ref = new Firebase("https://projectxu.firebaseio.com/users");
+  var allUsers = $firebaseArray(ref);
 
- //Ryvon's services
-
- 
- //Renaco's services 
-
+  return {
+    all: function(){
+    return allUsers;
+  }
+  }
+})
 
 ///Kadeem's services
 .factory('Groups', function($firebaseArray) {
@@ -20,7 +25,24 @@ angular.module('starter.services', ["ionic", "firebase"])
   return {
     all: function() {
       return groups_array;
+    },
+    get: function(group_id) {
+      var result = null;
+      angular.forEach(groups_array,function(value,key){
+        console.log(group_id);
+        console.log(value.$id);
+        if(group_id == value.$id){
+          result = value;
+        }
+      });
+      return result;
     }
 
   };
 });
+
+ 
+
+
+ //Renaco's services 
+

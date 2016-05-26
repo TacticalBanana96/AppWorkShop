@@ -1,0 +1,53 @@
+/* Empty. Add your own CSS if you like */
+
+.input{
+	background-color: white;
+	height: 40px;
+}
+
+.messages{
+	margin-top:5px;
+	margin-bottom:5px;
+	border-width:0px;
+	background-color:#F0F0F0;
+}
+.img{
+	height: 64;
+	width:64;
+}
+.platform-android .chatbox{
+	position: fixed;
+	background-color: white;
+}
+
+.platform-ios .chatbox{
+	position: fixed;
+	margin-bottom: 20%;
+}
+
+.add-background {
+	background: url('../img/login_img.png') no-repeat center;
+}
+
+.login-color{
+	background-color: #4080F0;
+}
+
+.tile-data {
+	margin-top: -120px;
+    margin-bottom: 120px;
+    height: 0;
+    overflow: visible;
+}
+
+.tile-data h6 {
+	margin-top:0px !important;
+	color:white !important;
+	font-weight:bold !important;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.tile-data p {
+	color:white !important;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
