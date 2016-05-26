@@ -5,7 +5,7 @@ angular.module('starter.services', ['ionic','firebase'])
 
 //Ryvon's services
 .factory('FBdata',function($firebaseArray){
-  var ref = new Firebase("https://boiling-torch-8435.firebaseio.com/users");
+  var ref = new Firebase("https://projectxu.firebaseio.com/users");
   var allUsers = $firebaseArray(ref);
 
   return {
