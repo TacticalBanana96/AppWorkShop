@@ -1,23 +1,19 @@
-angular.module('starter.services', ["ionic", "firebase"])
+angular.module('starter.services', ['ionic','firebase'])
 
 
  //Daria's services
 
-
- //Ryvon's services
+//Ryvon's services
 .factory('FBdata',function($firebaseArray){
-  var ref = new Firebase("https://projectxu.firebaseio.com/groups");
+  var ref = new Firebase("https://boiling-torch-8435.firebaseio.com/users");
   var allUsers = $firebaseArray(ref);
 
   return {
     all: function(){
     return allUsers;
   }
-  };
-});
-
- //Renaco's services 
-
+  }
+})
 
 ///Kadeem's services
 .factory('Groups', function($firebaseArray) {
@@ -33,3 +29,9 @@ angular.module('starter.services', ["ionic", "firebase"])
 
   };
 });
+
+ 
+
+
+ //Renaco's services 
+

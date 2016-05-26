@@ -11,14 +11,16 @@ $scope.fbdata = FBdata.all();
 console.log($scope.fbdata);
 
 $scope.login = function(){
-  var ref = new Firebase("https://sizzling-torch-8150.firebaseio.com/users");
+  var ref = new Firebase("https://boiling-torch-8435.firebaseio.com/users");
         ref.authWithOAuthPopup("facebook", function(error, authData) {
       if (error){
           console.log("Login Failed!", error);
         } else {
           console.log("Authenticated successfully with payload:", authData);
+          $state.go("dash"); 
           var users = $filter('filter')($scope.fbdata, {details : authData.facebook});
           console.log(users);
+
 
           if(users.length >= 1){
             angular.forEach(users,function(user, key) {
