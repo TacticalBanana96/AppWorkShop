@@ -5,10 +5,19 @@
   <ion-content >
     <div  style=" padding-bottom:100px;">
       <div class="list messages" ng-repeat="chat in chats | filter:group_id">
-       <div class="item item-avatar messages">
-           <h4>{{chat.sender_name}}</h4>
+
+       <!--<div class="item item-avatar messages">
+        <div class="item item-avatar img">
+          <img ng-src="{{chat.imgURL}}" >
+          <h5 class="img">{{chat.sender_name}}</h5>
+          </div>
+        </div>-->
+        <div class="item item-avatar" >
+          <img ng-src="{{chat.imgURL}}" >
+       
         </div>
-        <p>{{chat.message}}</p>
+           <h6>{{chat.sender_name}}</h6>
+          <p>{{chat.message}}</p>
        
       </div>
     </div>
@@ -18,7 +27,7 @@
      <form>
        <div class="list ">
           <div class="item item-input-inset">
-            <label class="item-input-wrapper input">
+            <label class="item-input-wrapper sendmessage">
               <input type="text" placeholder="message" ng-model="chat.message" >
             </label>
             <button class="button ion ion-chatbubble custom-icon" ng-click = "sendChat(chat)" style="padding-bottom: 60px;font-size: 30px;color: yellow;"></button>

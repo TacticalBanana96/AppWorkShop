@@ -11,18 +11,17 @@ angular.module('starter.controllers', ["ionic",'firebase'])
                     $rootScope.notifyIonicGoingBack();
                   };
                  
-                  //$scope.fb_id = ;
+            
                 console.log('state ' + $stateParams);
                 var ref = new Firebase('https://projectxu.firebaseio.com/chats') //USE OUR Firebase FOR CHAT!!
                 
 
               
-                //$scope.sender_id = $scope.fbdata;
+            
 
-                //$scope.fbname = $scope.fbdata.displayName;
+           
                 $scope.group_id = $stateParams.group_id;
- 				//$scope.fbname = "BOB";
- 				//$scope.sender_id = 1;
+ 				
                 var sync = $firebaseArray(ref);
                 sync.$loaded(function (data) {
                    // var filtered_chats = new Array();
@@ -72,6 +71,7 @@ angular.module('starter.controllers', ["ionic",'firebase'])
 				   console.log("Lastname" + snapshot.key(), snapshot.val().displayName);
 				   $scope.sender_name = snapshot.val().displayName;
 				   $scope.sender_id = snapshot.val().id;
+				   $scope.imgURL = snapshot.val().cachedUserProfile.picture.data.url;
 
 
 				});
@@ -94,6 +94,7 @@ angular.module('starter.controllers', ["ionic",'firebase'])
                   	 
                       sender_id: $scope.sender_id, 
                       sender_name: $scope.sender_name,//SWITCH TO FACEBOOK!!!
+                      imgURL:$scope.imgURL,
                       message: chat.message, 
                       group_id: $scope.group_id, 
                       timestamp: new Date().getTime(),

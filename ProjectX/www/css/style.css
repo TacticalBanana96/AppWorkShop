@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 
-.input{
+.sendmessage{
 	background-color: white;
 	height: 40px;
 	display:inline-block;
@@ -9,7 +9,7 @@
 .messages{
 	margin-top:5px;
 	margin-bottom:5px;
-	border-width:0px;
+
 	background-color:#F0F0F0;
 }
 
