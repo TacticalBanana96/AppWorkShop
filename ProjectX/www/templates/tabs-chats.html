@@ -5,11 +5,11 @@
   <ion-content >
     <div  style=" padding-bottom:100px;">
       <div class="list messages" ng-repeat="chat in chats | filter:group_id">
-       <a class="item item-avatar messages" href="https://www.facebook.com/{{chat.user}}">
-         <img ng-src="{{chat.imgURL}}">
-           <h3>{{chat.sender_id}}</h3>
-           <p>{{chat.message}}</p>
-       </a>
+       <div class="item item-avatar messages">
+           <h4>{{chat.sender_name}}</h4>
+        </div>
+        <p>{{chat.message}}</p>
+       
       </div>
     </div>
   </ion-content>
