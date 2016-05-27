@@ -58,5 +58,32 @@
 	margin-bottom: 30px;
 }
 
+.float-right{
+	float: right;
+	top: -20px;
+	margin-bottom: 0px;
+	
+}
+
+.priority-design1{
+	background-color: #E65453;
+	width: 20px;
+	height: 75px;
+	float: right;
+}
+
+.priority-design2{
+	background-color: #E67D21;
+	width: 20px;
+	height: 75px;
+	float: right;
+}
+
+.priority-design3{
+	background-color: #27AE61;
+	width: 20px;
+	height: 75px;
+	float: right;
+}
 
 

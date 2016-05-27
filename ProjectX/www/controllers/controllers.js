@@ -113,7 +113,7 @@ $scope.login = function(){
  //Kadeem's controllers
 .controller('Group', function($scope, $stateParams, Groups) {
 
-  $scope.group_id = $stateParams.group_id;
+  $scope.group_id = $stateParams.group_id; //TODO: Find a way to send the group name to the group page
   
   console.log('Full group ' + Groups.get($scope.group_id));
 	console.log('Group ' + $scope.randomVAr);
@@ -124,6 +124,14 @@ $scope.login = function(){
 .controller('GroupAdd', function($scope) {
 
 	$scope.random = "kadeem"; //For testing purposes
+
+})
+
+.controller('TaskDetail', function($scope, $state, path) {
+
+  $scope.gotoURL2 = function(state,path){
+    $state.go(path);
+  };
 
 })
 

@@ -123,11 +123,20 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
 
  
  //Kadeem's States
+
+ .state('taskdetail', {
+   url: '/taskdetail',
+   templateUrl: 'templates/task-detail.html',
+   //controller: 'TaskDetail'
+ })
+
  .state('groupadd', {
    url: '/group_add/',
    templateUrl: 'templates/group-add.html',
    controller: 'GroupAdd'
  });
+
+
 
 
  $urlRouterProvider.otherwise('/dash');
