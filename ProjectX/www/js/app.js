@@ -130,6 +130,12 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
    //controller: 'TaskDetail'
  })
 
+ .state('taskdetail2', {
+   url: '/taskdetail2',
+   templateUrl: 'templates/task-detail2.html',
+   //controller: 'TaskDetail'
+ })
+
  .state('groupadd', {
    url: '/group_add/',
    templateUrl: 'templates/group-add.html',

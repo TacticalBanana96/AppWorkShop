@@ -1,28 +1,20 @@
 /* Empty. Add your own CSS if you like */
 
-.input{
+.sendmessage{
 	background-color: white;
 	height: 40px;
+	display:inline-block;
 }
 
 .messages{
 	margin-top:5px;
 	margin-bottom:5px;
-	border-width:0px;
 	background-color:#F0F0F0;
 }
-.img{
-	height: 64;
-	width:64;
-}
-.platform-android .chatbox{
-	position: fixed;
-	background-color: white;
-}
 
-.platform-ios .chatbox{
-	position: fixed;
-	margin-bottom: 20%;
+.platform-ios .bar-footer{
+	/*background-color: #27AE61;*/
+	bottom: 71px;
 }
 
 .add-background {
@@ -86,4 +78,61 @@
 	float: right;
 }
 
+.add-text-size{
+	font-size: 1.5em !important;
+	font-weight: bold;
+	font-family: helvetica;
+	color: white;
+	position: relative;
+	margin-bottom: 0px;
+    top: 65%;
+    text-align: center;
+}
 
+.add-description-size{
+	font-size: 1em !important;
+	font-weight: bold;
+	font-family: helvetica;
+	color: white;
+	position: relative;
+    top: 65%;
+    text-align: center;
+}
+
+.add-text-style{
+	font-family: helvetica;
+	color: black;
+	padding-top: 40px;
+	margin-left: 10px;
+}
+.add-priority-background{
+	background-color: #27AE61;
+	height: 33%;
+
+}
+
+.add-priority-background2{
+	background-color: #E67D21;
+	height: 33%;
+}
+
+.add-avatar-a{
+	position: absolute;
+    left: 50%;
+}
+.add-avatar-img{
+	position: relative;
+    right: 50%;
+    border-style: solid;
+    border-radius: 100%;
+    border-width: 2px;
+    border-color: white;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+}
+
+.add-some-padding{
+	padding-top: 5px;
+	padding-left: 15px;
+}
