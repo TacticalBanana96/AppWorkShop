@@ -660,8 +660,11 @@ ion-infinite-scroll {
 .button-block {
   display: block;
   clear: both; }
-  .button-block:after {
-    clear: both; }
+
+.button-block:after {
+    clear: both; 
+  }
+
 
 .button-full, .button-full > .button {
   display: block;
@@ -5425,7 +5428,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
     border-bottom: 1px dotted rgba(0,0,0, 0.12); }
   .platform-android .list:not(.card) .item.item-input input, .platform-android .list:not(.card) .item.item-input textarea, .platform-override .list:not(.card) .item.item-input input, .platform-override .list:not(.card) .item.item-input textarea {
     text-shadow: 0 0 0 #444;
-    color: rgb(63,81,181);
+    color: #F7F52A;
     -webkit-text-fill-color: transparent; }
   .platform-android .list:not(.card) .item.item-input input::-webkit-input-placeholder, .platform-android .list:not(.card) .item.item-input textarea::-webkit-input-placeholder, .platform-override .list:not(.card) .item.item-input input::-webkit-input-placeholder, .platform-override .list:not(.card) .item.item-input textarea::-webkit-input-placeholder {
     color: #444;

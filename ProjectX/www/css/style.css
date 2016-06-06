@@ -136,3 +136,16 @@
 	padding-top: 5px;
 	padding-left: 15px;
 }
+
+.add-margin-top{
+	margin-top: 400px;
+}
+
+.text-styling{
+	color: white;
+	padding-top: 12px;
+}
+
+.btn-background{
+	background-color: red;
+}

@@ -178,7 +178,6 @@ $scope.login = function(){
   $scope.group_id = $stateParams.group_id; //TODO: Find a way to send the group name to the group page
   
   console.log('Full group ' + Groups.get($scope.group_id));
-	console.log('Group ' + $scope.randomVAr);
 
 })
 
