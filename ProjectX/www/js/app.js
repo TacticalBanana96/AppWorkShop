@@ -94,13 +94,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
         }
       }
   })
-  
-  // //Renaco's States 
-  // .state('page', {
-  //   url: '/page3',
-  //   templateUrl: 'templates/tabs-task.html',
-  //   //controller: 'pageCtrl'
-  // })
+
 
     //test state for tabs
    .state('group.tasks', {
